@@ -1,0 +1,14 @@
+Lena:{"spol" : "zenska", "barva_las":"blond" ,"dolzina_las":"dolgi", "barva_majice":"zelena" , "ocala":"ne" , "usta": "odprta"}
+Vilma:{"spol" : "zenska", "barva_las":"rdeca" ,"dolzina_las":"kratki", "barva_majice":"zelena" , "ocala":"da", "usta": "odprta"}
+Michael:{"spol" : "moski", "barva_las":"blond" ,"dolzina_las":"kratki", "barva_majice":"zelena" , "ocala":"ne" , "usta": "odprta"}
+Robert:{"spol" : "moski", "barva_las":"rjava" ,"dolzina_las":"kratki", "barva_majice":"rdeca" , "ocala":"ne" , "usta": "zaprta"}
+Martina:{"spol" : "zenska", "barva_las":"crna" ,"dolzina_las":"dolgi", "barva_majice":"siva" , "ocala":"ne" , "usta": "odprta"}
+Hans:{"spol" : "moski", "barva_las":"rdeča","dolzina_las":"kratki", "barva_majice":"zelena" , "ocala":"ne" , "usta": "zaprta"}
+Hanna:{"spol" : "zenska", "barva_las":"rdeča" ,"dolzina_las":"dolgi", "barva_majice":"zelena" , "ocala":"ne" , "usta": "odprta"}
+Ludo:{"spol" : "moski", "barva_las": "nima las","dolzina_las":"nima las", "barva_majice":"rdeca" , "ocala":"ne" , "usta": "odprta"}
+Tilman:{"spol" : "moski", "barva_las": "crna" ,"dolzina_las":"kratki", "barva_majice":"crna" , "ocala":"ne" , "usta": "zaprta"}
+Ina:{"spol" : "zenska", "barva_las":"crna" ,"dolzina_las":"kratki", "barva_majice":"zelena" , "ocala":"ne" , "usta": "odprta"}
+Brigitte:{"spol" : "zenska", "barva_las":"blond" ,"dolzina_las":"kratki", "barva_majice":"modra" , "ocala":"ne" , "usta": "zaprta"}
+Frank:{"spol" : "moski", "barva_las":"rjava" ,"dolzina_las":"kratki", "barva_majice":"bela" , "ocala":"ne" , "usta":"zaprta"}
+Karl:{"spol" : "moski", "barva_las":"nima las" ,"dolzina_las":"nima las", "barva_majice":"bela" , "ocala":"ne" , "usta": "zaprta"}
+Erika:{"spol" : "zenska", "barva_las":"crna" ,"dolzina_las":"kratki", "barva_majice":"rdeca" , "ocala":"ne" , "usta": "zaprta"}
