@@ -3,13 +3,17 @@ import json
 
 ZACETEK = 'Z'
 
+PRAVILNI_UGIB = '+'
+NAPACEN_UGIB = '-'
+
 ZMAGA = 'W'
 PORAZ = 'L'
 
 
 osebe = []
-datoteka_osebe = open("Ugani osebo\osebe.txt", "r", encoding='utf-8')
-for line in datoteka_osebe:
+#naredimo seznam oseb v katerem bodo slovarji z lastnostmi oseb
+datoteka_osebe = open("osebe.txt", "r", encoding='utf-8')
+for line in datoteka_osebe: 
     oseba = {}
     lined = line.split(",")
     for i in range(len(lined)):
@@ -19,66 +23,52 @@ for line in datoteka_osebe:
         oseba[key] = val
     osebe.append(oseba)
 
-vprasanja=[]
-with open('UganiOsebo/vprasanja.txt', encoding='UTF-8') as datoteka_vprasanja:
-    for vprasanje in datoteka_vprasanja:
-        vprasanja.append(vprasanje[:-1])
+
+polje_oseb = []
+#stevila od 0 do 13 (vsaka za eno osebo), ki se bodo brisala iz polja,
+#  ko bo oseba izpadla iz ugibanja
+for i in range(len(osebe)):   
+    polje_oseb.append(i)
+
 
 class Igra:
 
-    def __init__ (self, oseba, ugibi=None):
-        self.oseba
-        if ugibi is None:
-            self.ugibi = []
+    def __init__ (self, oseba):
+        self.oseba = oseba
+
+    def zmaga(self):
+        if len(polje_oseb) == 1:
+            return True
+    
+    def ugibaj(self, kriterij, vrednost):
+        global polje_oseb
+        pomozni = polje_oseb.copy()
+        if vrednost == self.oseba[kriterij]:
+            print('pravilno')
+            for i in polje_oseb:
+                druga_oseba = osebe[i]
+                if vrednost != druga_oseba[kriterij]:
+                    pomozni.remove(i)
+                    print(pomozni)
+            polje_oseb = pomozni.copy()
+            if self.zmaga():
+                print('ZMAGA')
+                return ZMAGA
         else:
-            self.ugibi = ugibi
-
-    def
-
-    def ugibaj(self):
-        for kriterij in oseba:
-
+            print('napačno')
+            for i in polje_oseb:
+                druga_oseba = osebe[i]
+                if vrednost == druga_oseba[kriterij]:
+                    pomozni.remove(i)
+                    print(pomozni)
+            polje_oseb = pomozni.copy()        
+            if self.zmaga():
+                print('ZMAGA')
+                return ZMAGA
 
     
 def nova_igra():
     nakljucna_oseba = random.choice(osebe)
+    print(nakljucna_oseba)
     return Igra(nakljucna_oseba)
 
-
-class UgibajOsebo:
-    '''
-    Skrbi za trenutno stanje več iger (imel bo več objektov tipa igra)
-    '''
-
-    def __init__(self):
-        #slovar, ki ID-ju priredi objektt njegove igre
-        self.igre = {}      #int -> (Igra, stanje)
-    
-    def prost_id_igre(self):
-        '''Vrne nek id za novo igro, ki ga ne uporablja se nobena igra '''
-        if len(self.igre) == 0:
-            return 0
-        else:
-            return max(self.igre.keys()) + 1
-    
-    def nova_igra(self):
-        # dobimo novi ID
-
-        id_igre = self.prost_id_igre()
-
-        # naredimo novo igre
-
-        igra = nova_igra()
-
-        # vse to shranimo v self.igre
-
-        self.igre[id_igre] = (igra, ZACETEK)
-        
-        # vrnemo nov ID
-
-        return id_igre
-
-    def ugibaj(self, id_igre, crka):
-        igra, _ =self.igre[id_igre]
-        poskus = igra.ugibaj(crka)
-        self.igre[id_igre] = (igra, poskus)
