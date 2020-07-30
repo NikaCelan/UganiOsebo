@@ -7,23 +7,37 @@ ZMAGA = 'W'
 PORAZ = 'L'
 
 
-osebe=[]
-with open('UganiOsebo/osebe.txt', encoding='UTF-8') as datoteka_osebe:
-    for vrstica in datoteka_osebe:
-        osebe.append(vrstica[])
+osebe = []
+datoteka_osebe = open("Ugani osebo\osebe.txt", "r", encoding='utf-8')
+for line in datoteka_osebe:
+    oseba = {}
+    lined = line.split(",")
+    for i in range(len(lined)):
+        (key, val) = lined[i].split(":")
+        key = key.strip()
+        val = val.strip()
+        oseba[key] = val
+    osebe.append(oseba)
 
 vprasanja=[]
 with open('UganiOsebo/vprasanja.txt', encoding='UTF-8') as datoteka_vprasanja:
     for vprasanje in datoteka_vprasanja:
-        vprasanja.append(vprasanje)
+        vprasanja.append(vprasanje[:-1])
 
 class Igra:
 
-    def __init__ (self, oseba, vprasanje):
-        self.oseba = osebe[x]
+    def __init__ (self, oseba, ugibi=None):
+        self.oseba
+        if ugibi is None:
+            self.ugibi = []
+        else:
+            self.ugibi = ugibi
 
-    def ugibi(self):
-        for lastnost in osebe[]
+    def
+
+    def ugibaj(self):
+        for kriterij in oseba:
+
 
     
 def nova_igra():
