@@ -1,35 +1,37 @@
 import bottle
 import model
 
-uganiosebo = model.UganiOsebo()
+SKRIVNOST = 'moja skrivnost'
+PISKOTEK = 'idigre'
 
-vislice = model.Vislice()
+uganiosebo = model.UganiOsebo(model.DATOTEKA_STANJE)
 
 @bottle.get('/')
 def index():
-    return bottle.template('./Vislice/views/index.tpl', )
+    return bottle.template('views/index.tpl')
+
+@bottle.post('/nova-igra/')
+def nova_igra():
+    id_igre = uganiosebo.nova_igra()
+    bottle.response.set_cookie(PISKOTEK, str(id_igre), path='/', secret=SKRIVNOST)
+    bottle.redirect('/igra/')
+
+@bottle.get('/igra/')
+def pokazi_igro():
+    id_igre = int(bottle.request.get_cookie(PISKOTEK, secret=SKRIVNOST))
+    igra, stanje = uganiosebo.igre[id_igre]
+    return bottle.template('views/igra.tpl', igra=igra, stanje=stanje)
 
 @bottle.post('/igra/')
-def nova_igra():
-    id_nove_igre = vislice.nova_igra()
-    bottle.redirect(f'/igra/{id_nove_igre}/')
+def ugibaj():
+    id_igre = int(bottle.request.get_cookie(PISKOTEK, secret=SKRIVNOST))
+    kriterij = bottle.request.forms.getunicode('kriterij')
+    
+    uganiosebo.ugibaj(id_igre, kriterij, vrednost)
+    bottle.redirect('/igra/')
 
-@bottle.get('/igra/<id_igre:int>/')
-def pokazi_igro(id_igre):
-    igra, poskus = vislice.igre[id_igre]
-    return bottle.template('./Vislice/views/igra.tpl', igra = igra, poskus=poskus, id_igre=id_igre)
-
-@bottle.post('/igra/<id_igre:int>/')
-def ugibaj(id_igre):
-    # dobis crke
-    crka = bottle.request.form.getunicode('crka')
-
-    vislice.ugibaj(id_igre, crka)
-
-    bottle.redirect(f'/igra/{id_igre}/')
-
-@bottle.get('/img/<picture>')
-def serve_pictures(picture):
-    return bottle.static_file(picture, root='img')
+# @bottle.get('/img/<slika>')
+# def pokazi_sliko(slika):
+#     return bottle.static_file(slika, root='img')
 
 bottle.run(reloader=True, debug=True)
