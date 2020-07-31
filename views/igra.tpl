@@ -29,6 +29,19 @@
       font-family: Arial, Helvetica, sans-serif;
       padding-top: 5%;
       font-size: 25px;
+      
+    }
+    label {
+        color: #e04d4d;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    select {
+        color: #e47979;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight:550;
+
     }
     </style>
   </head>
@@ -56,12 +69,30 @@
     <th><img src="../img/13.png" alt="Erika"></th>
     </tr>
     <tr>
-      <th>
-      <form action="/igra/" method="post">
-        <button type="submit"; style="background-color:#ea8b8b; border-color:#C77575; 
-        color:white; font-size: 16px; font-family: Arial, Helvetica, 
-        sans-serif; padding: 5px;">Nova igra</button>
-      </form>
+    <th colspan="2">
+        <form action="">
+            <label>Kriterij: </label>
+            <select name="kriterij">
+            <option>spol</option>
+            <option>barva las</option>
+            <option>dolžina las</option>
+            <option>barva majice</option>
+            <option>usta</option>
+            </select>
+        </form>
+      </th>
+      <th colspan="2">
+        <form action="">
+            <label>Vrednost: </label>
+            <select name="vrednost">
+            <option>moški </option>
+            <option>ženska </option>
+            <option> </option>
+            <option> </option>
+            <option> </option>
+            <option> </option>
+            </select>
+        </form>
       </th>
     </tr>
 </table>

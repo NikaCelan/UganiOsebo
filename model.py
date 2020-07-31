@@ -3,12 +3,10 @@ import json
 
 ZACETEK = 'Z'
 
-PRAVILNI_UGIB = '+'
-NAPACEN_UGIB = '-'
-
 ZMAGA = 'W'
 PORAZ = 'L'
 
+DATOTEKA_STANJE = 'stanje.json'
 
 osebe = []
 #naredimo seznam oseb v katerem bodo slovarji z lastnostmi oseb
@@ -33,14 +31,19 @@ for i in range(len(osebe)):
 
 class Igra:
 
-    def __init__ (self, oseba):
+    def __init__ (self, oseba, ugibi = None):
         self.oseba = oseba
+        if ugibi == None:
+            self.ugibi = {}
+        else:
+            self.ugibi = ugibi
 
     def zmaga(self):
         if len(polje_oseb) == 1:
             return True
     
     def ugibaj(self, kriterij, vrednost):
+        self.ugibi[kriterij] = vrednost
         global polje_oseb
         pomozni = polje_oseb.copy()
         if vrednost == self.oseba[kriterij]:
@@ -49,10 +52,8 @@ class Igra:
                 druga_oseba = osebe[i]
                 if vrednost != druga_oseba[kriterij]:
                     pomozni.remove(i)
-                    print(pomozni)
             polje_oseb = pomozni.copy()
             if self.zmaga():
-                print('ZMAGA')
                 return ZMAGA
         else:
             print('napačno')
@@ -60,15 +61,44 @@ class Igra:
                 druga_oseba = osebe[i]
                 if vrednost == druga_oseba[kriterij]:
                     pomozni.remove(i)
-                    print(pomozni)
             polje_oseb = pomozni.copy()        
             if self.zmaga():
-                print('ZMAGA')
                 return ZMAGA
 
-    
+nakljucna_oseba = random.choice(osebe)   
 def nova_igra():
-    nakljucna_oseba = random.choice(osebe)
-    print(nakljucna_oseba)
     return Igra(nakljucna_oseba)
+class UganiOsebo:
+    def __init__(self, datoteka_s_stanjem):
+        self.datoteka_s_stanjem = datoteka_s_stanjem
+        self.nalozi_igre_iz_datoteke()
+
+    def prost_id_igre(self):
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
+
+    def nova_igra(self):
+        id_igre = self.prost_id_igre()
+        igra = nova_igra()
+        self.igre[id_igre] = (igra, ZACETEK)
+        self.zapisi_igre_v_datoteko()
+        return id_igre
+
+    def ugibaj(self, id_igre, kriterij, vrednost):
+        igra, _ = self.igre[id_igre]
+        stanje = igra.ugibaj(kriterij, vrednost)
+        self.igre[id_igre] = (igra, stanje) 
+        self.zapisi_igre_v_datoteko() 
+
+    def nalozi_igre_iz_datoteke(self):
+        with open(self.datoteka_s_stanjem, 'r', encoding='utf-8') as f:
+            igre = json.load(f) 
+            self.igre = {int(id_igre): (Igra(oseba, ugibi), stanje) for id_igre, (oseba, ugibi, stanje) in igre.items()}
+
+    def zapisi_igre_v_datoteko(self):
+        with open(self.datoteka_s_stanjem, 'w', encoding='utf-8') as f: 
+            igre = {id_igre: (igra.oseba, stanje) for id_igre, (igra, stanje) in self.igre.items()}
+            json.dump(igre, f, ensure_ascii=False)
 
