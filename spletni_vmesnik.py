@@ -1,6 +1,7 @@
 import bottle
 import model
 
+
 SKRIVNOST = 'moja skrivnost'
 PISKOTEK = 'idigre'
 
@@ -22,16 +23,6 @@ def pokazi_igro():
     igra, stanje = uganiosebo.igre[id_igre]
     return bottle.template('views/igra.tpl', igra=igra, stanje=stanje)
 
-@bottle.post('/igra/')
-def ugibaj():
-    id_igre = int(bottle.request.get_cookie(PISKOTEK, secret=SKRIVNOST))
-    kriterij = bottle.request.forms.getunicode('kriterij')
-    
-    uganiosebo.ugibaj(id_igre, kriterij, vrednost)
-    bottle.redirect('/igra/')
-
-# @bottle.get('/img/<slika>')
-# def pokazi_sliko(slika):
-#     return bottle.static_file(slika, root='img')
 
 bottle.run(reloader=True, debug=True)
+
