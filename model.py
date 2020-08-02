@@ -4,7 +4,7 @@ import json
 ZACETEK = 'Z'
 
 ZMAGA = 'W'
-PORAZ = 'L'
+
 
 DATOTEKA_STANJE = 'stanje.json'
 
@@ -31,19 +31,29 @@ for i in range(len(osebe)):
 
 class Igra:
 
-    def __init__ (self, oseba, ugibi = None):
+    def __init__ (self, oseba, kriterij = None, vrednost = None):
         self.oseba = oseba
-        if ugibi == None:
-            self.ugibi = {}
-        else:
-            self.ugibi = ugibi
+        self.kriterij = kriterij
+        self.vrednost = vrednost
 
     def zmaga(self):
         if len(polje_oseb) == 1:
             return True
+
+    # def izberi_kriterij(kriterij):
+    #     if kriterij == spol:
+    #         return {kriterij: moški, ženska}
+    #     elif kriterij == barva las:
+    #         return {barva las: blond, črna, rdeča, rjava, nima las}
+    #     elif kriterij == dolžina las:
+    #         return {kriterij: kratki, dolgi}
+    #     elif kriterij == barva majice:
+    #         return {kriterij: rdeča, črna, siva, zelena, bela, modra}
+    #     elif kriterij == usta:
+    #         return {kriterij: odprta, zaprta}
+        
     
     def ugibaj(self, kriterij, vrednost):
-        self.ugibi[kriterij] = vrednost
         global polje_oseb
         pomozni = polje_oseb.copy()
         if vrednost == self.oseba[kriterij]:
@@ -95,10 +105,11 @@ class UganiOsebo:
     def nalozi_igre_iz_datoteke(self):
         with open(self.datoteka_s_stanjem, 'r', encoding='utf-8') as f:
             igre = json.load(f) 
-            self.igre = {int(id_igre): (Igra(oseba, ugibi), stanje) for id_igre, (oseba, ugibi, stanje) in igre.items()}
+            self.igre = {int(id_igre): (Igra(oseba, kriterij, vrednost), stanje) 
+            for id_igre, (oseba, kriterij, vrednost, stanje) in igre.items()}
 
     def zapisi_igre_v_datoteko(self):
         with open(self.datoteka_s_stanjem, 'w', encoding='utf-8') as f: 
-            igre = {id_igre: (igra.oseba, stanje) for id_igre, (igra, stanje) in self.igre.items()}
+            igre = {id_igre: (igra.oseba, igra.kriterij, igra.vrednost, stanje) for id_igre, (igra, stanje) in self.igre.items()}
             json.dump(igre, f, ensure_ascii=False)
 
