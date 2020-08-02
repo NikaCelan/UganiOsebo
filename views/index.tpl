@@ -38,7 +38,7 @@
 <table>
      <caption><h2>UGANI OSEBO</h2></caption>
     <tr>
-    <th><img src="../img/0.jpg" alt="Lena"></th>
+    <th><img src="../img/0.png" alt="Lena"></th>
     <th><img src="../img/1.png" alt="Vilma"></th>
     <th><img src="../img/2.png" alt="Michael"></th>
     <th><img src="../img/3.png" alt="Robert"></th>
