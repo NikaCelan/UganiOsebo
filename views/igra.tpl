@@ -70,7 +70,7 @@
     </tr>
     <tr>
     <th colspan="2">
-        <form action="">
+        <form action="/izberi kriterij/">
             <label>Kriterij: </label>
             <select name="kriterij">
             <option>spol</option>
@@ -79,6 +79,10 @@
             <option>barva majice</option>
             <option>usta</option>
             </select>
+            
+            <input type="submit" value="Izberi Kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
+            color:white; font-size: 12px; font-family: Arial, Helvetica, 
+            sans-serif; padding: 3px;" />
         </form>
       </th>
       <th colspan="2">
@@ -91,6 +95,9 @@
             <option> </option>
             <option> </option>
             <option> </option>
+            <input type="submit" value="Pošlji"; style="background-color:#ea8b8b; border-color:#C77575; 
+            color:white; font-size: 12px; font-family: Arial, Helvetica, 
+            sans-serif; padding: 3px;" >
             </select>
         </form>
       </th>

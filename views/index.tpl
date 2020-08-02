@@ -9,7 +9,7 @@
   }
 
 .bg {
-  background-image: url(../img/ozadje.jpg);
+  background-image: url(img/ozadje.jpg);
   height: 100% ;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@
 <table>
      <caption><h2>UGANI OSEBO</h2></caption>
     <tr>
-    <th><img src="../img/0.png" alt="Lena"></th>
+    <th><img src="../img/0.jpg" alt="Lena"></th>
     <th><img src="../img/1.png" alt="Vilma"></th>
     <th><img src="../img/2.png" alt="Michael"></th>
     <th><img src="../img/3.png" alt="Robert"></th>
@@ -57,7 +57,7 @@
     </tr>
     <tr>
       <th>
-      <form action="/igra/" method="post">
+      <form action="/nova-igra/" method="post">
         <button type="submit"; style="background-color:#ea8b8b; border-color:#C77575; 
         color:white; font-size: 16px; font-family: Arial, Helvetica, 
         sans-serif; padding: 5px;">Nova igra</button>
