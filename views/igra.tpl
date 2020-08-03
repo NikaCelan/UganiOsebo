@@ -22,7 +22,7 @@
     }
 
     td, th {
-    padding: 5px;
+    padding: 6px;
 }
     h2 {
       color: #ea8b8b;
@@ -35,6 +35,7 @@
         color: #e04d4d;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
+        font-weight:550;
     }
     select {
         color: #e47979;
@@ -69,38 +70,68 @@
     <th><img src="../img/13.png" alt="Erika"></th>
     </tr>
     <tr>
-    <th colspan="2">
-        <form action="/izberi kriterij/">
+    <td colspan="3"; style="text-align:center;">
+        <form action="/izberi_kriterij/"; method="POST">
             <label>Kriterij: </label>
             <select name="kriterij">
-            <option>spol</option>
-            <option>barva las</option>
-            <option>dolžina las</option>
-            <option>barva majice</option>
-            <option>usta</option>
+            <optgroup label="spol">
+            <option>moški </option>
+            <option>ženska </option>
+          </optgroup>
+          <optgroup label="barva las">
+            <option>blond </option>
+            <option>črna </option>
+            <option>rdeča </option>
+            <option>rjava </option>
+            <option>lasje niso vidni </option>
+          </optgroup>
+          <optgroup label="dolžina las">
+            <option>kratki </option>
+            <option>dolgi </option>
+          </optgroup>
+          <optgroup label="barva majice">
+            <option>rdeča </option>
+            <option>črna </option>
+            <option>siva </option>
+            <option>zelena </option>
+            <option>bela </option>
+            <option>modra </option>
+          </optgroup>
+          <optgroup label="usta">
+            <option>odprta </option>
+            <option>zaprta </option>
+          </optgroup>
             </select>
             
-            <input type="submit" value="Izberi Kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
+            <input type="submit" value="Izberi Kriterij" name="kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
             color:white; font-size: 12px; font-family: Arial, Helvetica, 
             sans-serif; padding: 3px;" />
         </form>
-      </th>
-      <th colspan="2">
-        <form action="">
+      </td>
+      <td colspan="3"; style="text-align:left">
+        <form action="/izberi vrednost/"; method="POST">
             <label>Vrednost: </label>
             <select name="vrednost">
             <option>moški </option>
             <option>ženska </option>
-            <option> </option>
-            <option> </option>
-            <option> </option>
-            <option> </option>
-            <input type="submit" value="Pošlji"; style="background-color:#ea8b8b; border-color:#C77575; 
-            color:white; font-size: 12px; font-family: Arial, Helvetica, 
-            sans-serif; padding: 3px;" >
+            <option>blond </option>
+            <option>črna </option>
+            <option>rdeča </option>
+            <option>rjava </option>
+            <option>lasje niso vidni </option>
+            <option>rdeča </option>
+            <option>črna </option>
+            <option>siva </option>
+            <option>zelena </option>
+            <option>bela </option>
+            <option>modra </option>
+            <option>odprta </option>
+            <option>zaprta </option>
+            <input type="submit" value="Pošlji" name="vrednost"; style="background-color:#ea8b8b; border-color:#C77575; 
+            color:white; font-size: 12px; font-family: Arial, Helvetica, sans-serif; padding: 3px;" />
             </select>
         </form>
-      </th>
+      </td>
     </tr>
 </table>
 </div>
