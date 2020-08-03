@@ -23,6 +23,19 @@ def pokazi_igro():
     igra, stanje = uganiosebo.igre[id_igre]
     return bottle.template('views/igra.tpl', igra=igra, stanje=stanje)
 
+@bottle.post('/izberi_kriterij/')
+def izberi_kriterij():
+    id_igre = int(bottle.request.get_cookie(PISKOTEK, secret=SKRIVNOST))
+    kriterij = bottle.request.forms.getunicode('kriterij')
+    model.Igra.izberi_kriterij(id_igre, kriterij)
+    
+    bottle.redirect('/igra/')
+
+
+@bottle.get('/img/<slika>')
+def pokazi_sliko(slika):
+    return bottle.static_file(slika, root='img')
+
 
 bottle.run(reloader=True, debug=True)
 

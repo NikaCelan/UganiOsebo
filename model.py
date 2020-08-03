@@ -40,17 +40,17 @@ class Igra:
         if len(polje_oseb) == 1:
             return True
 
-    # def izberi_kriterij(kriterij):
-    #     if kriterij == spol:
-    #         return {kriterij: moški, ženska}
-    #     elif kriterij == barva las:
-    #         return {barva las: blond, črna, rdeča, rjava, nima las}
-    #     elif kriterij == dolžina las:
-    #         return {kriterij: kratki, dolgi}
-    #     elif kriterij == barva majice:
-    #         return {kriterij: rdeča, črna, siva, zelena, bela, modra}
-    #     elif kriterij == usta:
-    #         return {kriterij: odprta, zaprta}
+    def izberi_kriterij(self, kriterij):
+        if kriterij == 'spol':
+            return ['moški', 'ženski']
+        elif kriterij == 'barva las':
+            return ['blond', 'črna', 'rdeča', 'rjava', 'nima las']
+        elif kriterij == 'dolžina las':
+            return ['kratki', 'dolgi']
+        elif kriterij == 'barva majice':
+            return ['rdeča', 'črna', 'siva', 'zelena', 'bela', 'modra']
+        elif kriterij == 'usta':
+            return ['odprta', 'zaprta']
         
     
     def ugibaj(self, kriterij, vrednost):
