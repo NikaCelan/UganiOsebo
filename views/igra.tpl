@@ -71,25 +71,25 @@
     </tr>
     <tr>
     <td colspan="3"; style="text-align:center;">
-        <form action="/izberi_kriterij/"; method="POST">
+        <form action="/igra/"; method="GET">
             <label>Kriterij: </label>
-            <select name="kriterij">
-            <optgroup label="spol">
+            <select name="vrednost">
+          <optgroup label="spol", name="kriterij">
             <option>moški </option>
             <option>ženska </option>
           </optgroup>
-          <optgroup label="barva las">
+          <optgroup label="barva las", name="kriterij">
             <option>blond </option>
             <option>črna </option>
             <option>rdeča </option>
             <option>rjava </option>
             <option>lasje niso vidni </option>
           </optgroup>
-          <optgroup label="dolžina las">
+          <optgroup label="dolžina las", name="kriterij">
             <option>kratki </option>
             <option>dolgi </option>
           </optgroup>
-          <optgroup label="barva majice">
+          <optgroup label="barva majice", name="kriterij">
             <option>rdeča </option>
             <option>črna </option>
             <option>siva </option>
@@ -97,15 +97,15 @@
             <option>bela </option>
             <option>modra </option>
           </optgroup>
-          <optgroup label="usta">
+          <optgroup label="usta", name="kriterij">
             <option>odprta </option>
             <option>zaprta </option>
           </optgroup>
             </select>
             
-            <input type="submit" value="Izberi Kriterij" name="kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
+            <button type="submit" name="kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
             color:white; font-size: 12px; font-family: Arial, Helvetica, 
-            sans-serif; padding: 3px;" />
+            sans-serif; padding: 3px;">kriterij</button>
         </form>
       </td>
       <td colspan="3"; style="text-align:left">
