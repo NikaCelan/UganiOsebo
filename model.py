@@ -35,22 +35,23 @@ class Igra:
         self.oseba = oseba
         self.kriterij = kriterij
         self.vrednost = vrednost
+        
 
     def zmaga(self):
         if len(polje_oseb) == 1:
             return True
 
-    def izberi_kriterij(self, kriterij):
-        if kriterij == 'spol':
-            return ['moški', 'ženski']
-        elif kriterij == 'barva las':
-            return ['blond', 'črna', 'rdeča', 'rjava', 'nima las']
-        elif kriterij == 'dolžina las':
-            return ['kratki', 'dolgi']
-        elif kriterij == 'barva majice':
-            return ['rdeča', 'črna', 'siva', 'zelena', 'bela', 'modra']
-        elif kriterij == 'usta':
-            return ['odprta', 'zaprta']
+    # def izberi_kriterij(self, kriterij):
+    #     if kriterij == 'spol':
+    #         return ['moški', 'ženski']
+    #     elif kriterij == 'barva las':
+    #         return ['blond', 'črna', 'rdeča', 'rjava', 'nima las']
+    #     elif kriterij == 'dolžina las':
+    #         return ['kratki', 'dolgi']
+    #     elif kriterij == 'barva majice':
+    #         return ['rdeča', 'črna', 'siva', 'zelena', 'bela', 'modra']
+    #     elif kriterij == 'usta':
+    #         return ['odprta', 'zaprta']
         
     
     def ugibaj(self, kriterij, vrednost):
