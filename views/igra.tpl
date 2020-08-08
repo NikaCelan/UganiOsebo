@@ -108,30 +108,7 @@
             sans-serif; padding: 3px;">kriterij</button>
         </form>
       </td>
-      <td colspan="3"; style="text-align:left">
-        <form action="/izberi vrednost/"; method="POST">
-            <label>Vrednost: </label>
-            <select name="vrednost">
-            <option>moški </option>
-            <option>ženska </option>
-            <option>blond </option>
-            <option>črna </option>
-            <option>rdeča </option>
-            <option>rjava </option>
-            <option>lasje niso vidni </option>
-            <option>rdeča </option>
-            <option>črna </option>
-            <option>siva </option>
-            <option>zelena </option>
-            <option>bela </option>
-            <option>modra </option>
-            <option>odprta </option>
-            <option>zaprta </option>
-            <input type="submit" value="Pošlji" name="vrednost"; style="background-color:#ea8b8b; border-color:#C77575; 
-            color:white; font-size: 12px; font-family: Arial, Helvetica, sans-serif; padding: 3px;" />
-            </select>
-        </form>
-      </td>
+      
     </tr>
 </table>
 </div>
