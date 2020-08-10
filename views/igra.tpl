@@ -29,7 +29,7 @@
       font-family: Arial, Helvetica, sans-serif;
       padding-top: 5%;
       font-size: 25px;
-      
+
     }
     label {
         color: #e04d4d;
@@ -71,44 +71,44 @@
     </tr>
     <tr>
     <td colspan="3"; style="text-align:center;">
-        <form action="/igra/"; method="GET">
+        <form action="/igra/"; method="POST">
             <label>Kriterij: </label>
             <select name="vrednost">
-          <optgroup label="spol", name="kriterij">
-            <option>moški </option>
-            <option>ženska </option>
+          <optgroup label="spol">
+            <option value="spol:moški">moški</option>
+            <option value="spol:ženska">ženska</option>
           </optgroup>
-          <optgroup label="barva las", name="kriterij">
-            <option>blond </option>
-            <option>črna </option>
-            <option>rdeča </option>
-            <option>rjava </option>
-            <option>lasje niso vidni </option>
+          <optgroup label="barva las">
+            <option value="barva_las:blond">blond</option>
+            <option value="barva_las:črna">črna</option>
+            <option value="barva_las:rdeča">rdeča</option>
+            <option value="barva_las:rjava">rjava</option>
+            <option value="barva_las:lasje niso vidni">lasje niso vidni</option>
           </optgroup>
-          <optgroup label="dolžina las", name="kriterij">
-            <option>kratki </option>
-            <option>dolgi </option>
+          <optgroup label="dolžina las">
+            <option value="dolžina_las:kratki">kratki</option>
+            <option value="dolžina_las:dolgi">dolgi</option>
           </optgroup>
-          <optgroup label="barva majice", name="kriterij">
-            <option>rdeča </option>
-            <option>črna </option>
-            <option>siva </option>
-            <option>zelena </option>
-            <option>bela </option>
-            <option>modra </option>
+          <optgroup label="barva majice">
+            <option value="barva_majice:rdeča">rdeča</option>
+            <option value="barva_majice:črna">črna</option>
+            <option value="barva_majice:siva">siva</option>
+            <option value="barva_majice:zelena">zelena</option>
+            <option value="barva_majice:bela">bela</option>
+            <option value="barva_majice:modra">modra</option>
           </optgroup>
-          <optgroup label="usta", name="kriterij">
-            <option>odprta </option>
-            <option>zaprta </option>
+          <optgroup label="usta">
+            <option value="usta:odprta">odprta</option>
+            <option value="usta:zaprta">zaprta</option>
           </optgroup>
             </select>
-            
-            <button type="submit" name="kriterij"; style="background-color:#ea8b8b; border-color:#C77575; 
-            color:white; font-size: 12px; font-family: Arial, Helvetica, 
+
+            <button type="submit" name="kriterij"; style="background-color:#ea8b8b; border-color:#C77575;
+            color:white; font-size: 12px; font-family: Arial, Helvetica,
             sans-serif; padding: 3px;">kriterij</button>
         </form>
       </td>
-      
+
     </tr>
 </table>
 </div>

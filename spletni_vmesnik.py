@@ -26,10 +26,8 @@ def pokazi_igro():
 @bottle.post('/igra/')
 def ugibaj():
     id_igre = int(bottle.request.get_cookie(PISKOTEK, secret=SKRIVNOST))
-    kriterij = bottle.request.forms.get('kriterij')
-    vrednost = bottle.request.forms.get('vrednost')
+    [kriterij, vrednost] = bottle.request.forms.getunicode('vrednost').split(":")
     uganiosebo.ugibaj(id_igre, kriterij, vrednost)
-    
     bottle.redirect('/igra/')
 
 
