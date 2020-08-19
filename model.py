@@ -5,10 +5,10 @@ ZACETEK = 'Z'
 
 ZMAGA = 'W'
 
-
 DATOTEKA_STANJE = 'stanje.json'
 
 osebe = []
+izdelava_menija = []
 #naredimo seznam oseb v katerem bodo slovarji z lastnostmi oseb
 datoteka_osebe = open("osebe.txt", "r", encoding='utf-8')
 for line in datoteka_osebe: 
@@ -19,62 +19,79 @@ for line in datoteka_osebe:
         key = key.strip()
         val = val.strip()
         oseba[key] = val
+        zapis_v_meni = key + ":" + val
+        if zapis_v_meni not in izdelava_menija:
+            izdelava_menija.append(zapis_v_meni)
     osebe.append(oseba)
 
-
-polje_oseb = []
 #stevila od 0 do 13 (vsaka za eno osebo), ki se bodo brisala iz polja,
 #  ko bo oseba izpadla iz ugibanja
+
+polje_oseb = []
+izdelava_menija.sort()
 for i in range(len(osebe)):   
     polje_oseb.append(i)
 
 
 class Igra:
 
-    def __init__ (self, oseba, kriterij = None, vrednost = None):
+    def __init__ (self, oseba, kriterij = None, vrednost = None, stevilo_poskusov = 0, napaka = None):
         self.oseba = oseba
         self.kriterij = kriterij
         self.vrednost = vrednost
-        
+        self.stevilo_poskusov = stevilo_poskusov
+        self.napaka = napaka
 
     def zmaga(self):
         if len(polje_oseb) == 1:
             return True
 
-    # def izberi_kriterij(self, kriterij):
-    #     if kriterij == 'spol':
-    #         return ['moški', 'ženski']
-    #     elif kriterij == 'barva las':
-    #         return ['blond', 'črna', 'rdeča', 'rjava', 'nima las']
-    #     elif kriterij == 'dolžina las':
-    #         return ['kratki', 'dolgi']
-    #     elif kriterij == 'barva majice':
-    #         return ['rdeča', 'črna', 'siva', 'zelena', 'bela', 'modra']
-    #     elif kriterij == 'usta':
-    #         return ['odprta', 'zaprta']
-        
+    def povecaj_stevilo_poskusov(self):
+        self.stevilo_poskusov += 1
+    
+    def vrni_stevilo_poskusov(self):
+        return self.stevilo_poskusov
+
+    def vrni_pravilnost(self):
+        if self.pravilnost:
+            return "Pravilno!" 
+        else:
+            return "Nepravilno!"
+    
+    def napaka_pri_vnosu(self, napaka):
+        self.napaka = napaka
+
+    def vrni_napako(self):
+        if self.napaka:
+            return "Vnesel si neobstoječ kriterij!"
+        else:
+            return ""
     
     def ugibaj(self, kriterij, vrednost):
         global polje_oseb
         pomozni = polje_oseb.copy()
-        if vrednost == self.oseba[kriterij]:
-            print('pravilno')
-            for i in polje_oseb:
-                druga_oseba = osebe[i]
-                if vrednost != druga_oseba[kriterij]:
-                    pomozni.remove(i)
-            polje_oseb = pomozni.copy()
-            if self.zmaga():
-                return ZMAGA
+        if kriterij in self.oseba:
+            self.povecaj_stevilo_poskusov()
+            if vrednost == self.oseba[kriterij]:
+                self.pravilnost = True
+                for i in polje_oseb:
+                    druga_oseba = osebe[i]
+                    if vrednost != druga_oseba[kriterij]:
+                        pomozni.remove(i)
+                polje_oseb = pomozni.copy()
+                if self.zmaga():
+                    return ZMAGA
+            else:
+                self.pravilnost = False
+                for i in polje_oseb:
+                    druga_oseba = osebe[i]
+                    if vrednost == druga_oseba[kriterij]:
+                        pomozni.remove(i)
+                polje_oseb = pomozni.copy()        
+                if self.zmaga():
+                    return ZMAGA
         else:
-            print('napačno')
-            for i in polje_oseb:
-                druga_oseba = osebe[i]
-                if vrednost == druga_oseba[kriterij]:
-                    pomozni.remove(i)
-            polje_oseb = pomozni.copy()        
-            if self.zmaga():
-                return ZMAGA
+            self.napaka_pri_vnosu(True)
 
 nakljucna_oseba = random.choice(osebe)   
 def nova_igra():
