@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <title> Ugani Osebo </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-  body, html {
-  height: 100%;
-  margin: 0;
-  }
-p {
-  font-size: 16px; 
-  font-family: Arial, Helvetica, sans-serif; 
-  color:#ea8b8b;
-}
-.bg {
-  background-image: url(img/ozadje.jpg);
-  height: 100% ;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-    table {
-      margin-left: auto;
-      margin-right:auto;
-      width: 80%;
-    }
+% import model
+% rebase('base.tpl')
 
-    td, th {
-    padding: 5px;
-}
-    h2 {
-      color: #ea8b8b;
-      font-family: Arial, Helvetica, sans-serif;
-      padding-top: 5%;
-      font-size: 25px;
-    }
-    </style>
-  </head>
-
-<body>
-  <div class="bg">
+<div class="bg">
 <table>
      <caption><h2>UGANI OSEBO</h2></caption>
     <tr>
@@ -70,21 +32,18 @@ p {
       </th>
     </tr>
     </tr>
-      <th colspan="7"; style="text-align:center;">
+      <td colspan="7"; style="text-align:left;">
       <p>
         Ko pritisnete gumb nova igra, vam bo računalnik naključno izbral eno izmed zgornjih oseb.<br>
         Cilj igre je, v čim manj poskusih ugotoviti katero osebo je računalnik izbral.<br>
         Ugotavljate tako, da računalnik povprašate o lastnosti osebe. <br>
         Naprimer če želite vprašati če je ženska, to storite tako, da iz spustnega seznama pod razdelkom spol izberete ženska.<br>
         Po tem vam bo računalnik odgovoril ali je vaš ugib pravilen ali napačen. <br>
-        Če je napačen bo v tem primeru prečrtal vse ženske, če pa je napačen pa vse moške.<br>
+        Če je napačen bo v tem primeru prečrtal vse ženske, če pa je pravilen pa vse moške.<br>
         <br>
 
         Pri igranju vam želim veliko zabave in uspeha. 
       </p>
-      </th>
+      </td>
 </table>
 </div>
-</body>
-
-</html>
