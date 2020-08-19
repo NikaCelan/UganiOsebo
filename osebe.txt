@@ -3,10 +3,10 @@ ime: Vilma, spol: ženska, barva_las: rdeča, dolžina_las: kratki, barva_majice
 ime: Michael, spol: moški, barva_las: blond, dolžina_las: kratki, barva_majice: zelena, usta: odprta
 ime: Robert, spol: moški, barva_las: rjava, dolžina_las: kratki, barva_majice: rdeča, usta: zaprta   
 ime: Martina, spol: ženska, barva_las: črna, dolžina_las: dolgi, barva_majice: siva, usta: odprta   
-ime: Hans, spol:  moški, barva_las: rdeča, dolžina_las: kratki, barva_majice: zelena, usta: zaprta   
-ime: Hanna, spol: ženska, barva_las: rdeča, dolžina_las: dolgi, barva_majice: zelena, usta: odprta   
-ime: Ludo, spol:  moški, barva_las:  nima las, dolžina_las: nima las, barva_majice: rdeča, usta: odprta   
-ime: Tilman, spol:  moški, barva_las: črna, dolžina_las: kratki, barva_majice: črna, usta: zaprta   
+ime: Hans, spol: moški, barva_las: rdeča, dolžina_las: kratki, barva_majice: zelena, usta: odprta  
+ime: Hanna, spol: ženska, barva_las: rdeča, dolžina_las: dolgi, barva_majice: zelena, usta: zaprta   
+ime: Ludo, spol: moški, barva_las:  nima las, dolžina_las: nima las, barva_majice: rdeča, usta: odprta   
+ime: Tilman, spol: moški, barva_las: črna, dolžina_las: kratki, barva_majice: črna, usta: zaprta   
 ime: Ina, spol: ženska, barva_las: črna, dolžina_las: kratki, barva_majice: zelena, usta: odprta   
 ime: Brigitte, spol: ženska, barva_las: blond, dolžina_las: kratki, barva_majice: modra, usta: zaprta   
 ime: Frank, spol: moški, barva_las: rjava, dolžina_las: kratki, barva_majice: bela, usta: zaprta   
