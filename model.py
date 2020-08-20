@@ -26,12 +26,12 @@ for line in datoteka_osebe:
 
 #stevila od 0 do 13 (vsaka za eno osebo), ki se bodo brisala iz polja,
 #  ko bo oseba izpadla iz ugibanja
-
 polje_oseb = []
 izdelava_menija.sort()
 for i in range(len(osebe)):   
     polje_oseb.append(i)
 
+#izdelava menija za prikaz spustnega seznama
 
 class Igra:
 
@@ -58,6 +58,8 @@ class Igra:
         else:
             return "Nepravilno!"
     
+    #napake veljajo le za delo v tekstovnem vmesniku 
+    # kjer uporabnik sam napiše kriterij in vrednost
     def napaka_pri_vnosu(self, napaka):
         self.napaka = napaka
 

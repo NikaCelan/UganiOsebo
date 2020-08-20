@@ -41,7 +41,7 @@ def zahtevaj_vrednost():
 def pozeni_vmesnik():
     igra = model.nova_igra()
     print("\nUGANI OSEBO\n")
-    print("Med naštetimi osebami ugani tisto, ki jo je naključno izbral računalnik.\n")
+    print("Med naštetimi osebami ugani tisto, ki jo je naključno izbral računalnik. Na voljo imaš neomejeno poskusov.\n")
     for i in range(len(model.osebe)):
         print(izpis_osebe(model.osebe[i]))
     while True:  
@@ -52,12 +52,9 @@ def pozeni_vmesnik():
             if stanje == model.ZMAGA:
                 print(izpis_zmage(igra))
                 break
-
             else:
                 print(izpis_igre(igra))
         else:
             print(izpis_napake(igra))
-
-
 
 pozeni_vmesnik()
