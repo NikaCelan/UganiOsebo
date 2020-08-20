@@ -1,8 +1,22 @@
 # UganiOsebo
+## Opis programa
 
-Cilj igre Ugani Osebo je, da z nizom vprašanj na katere je odgovor da ali ne, poskušamo ugotoviti katero od oseb si je izbral nasprotnik (v našem primeru kar računalnik).
+Inspiracija za program je znana družabna igra Ugani kdo (Guess who) pri kateri si vsak igralec izbere osebo, zmaga pa tisti, ki s vprašanji o lastnostih osebe prej ugotovi, katero osebo si je nasprotnik izbral.
+V tem primeru igrate proti računalniku, ki izbere osebo, vi pa jo želite uganiti v čim manj poskusih. 
+Igro se igra v spletnem vmesniku, v okrnjeni verziji pa deluje tudi v tekstovnem vmesniku.
+Pri izdelavi sem si pomagala s progamom Vislice, ki smo ga naredili na vajah.
 
 ## Kako program zagnati?
 
-Ko zaženemo spletni_vmesnik.py in odpremo okno v brskalniku, lahko začnemo z igro.
+Iz repozitorija si na svoj računalnik prenesite zip datoteko.
+Odprite jih v izbranem urejevalniku
+Poženite datoteko spletni_vmesnik.py
+Kliknite na povezavo http://localhost:8080/
+Odprla se vam bo spletna stran z igro, kjer so napisana navodila za igranje
+
+## Izgled
+
+Stran sem oblikovala sama, slike oseb in slika za ozadje pa niso moja last.
+ozadje: https://sv.vecteezy.com/vektor-konst/690856-rosa-blom-ram-pa-en-vit-bakgrund (28. 7. 2020)
+osebe: https://lh3.googleusercontent.com/07KAHqdPqMps67C2KdyP1qA1TpsYgMOyf65C_QvPTyTUMuug6p1U734UKVdUSFd9SOJCxQ=s113 (28. 7. 2020)
 
