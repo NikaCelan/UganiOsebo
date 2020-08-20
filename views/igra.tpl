@@ -70,9 +70,9 @@
         <td colspan="7"; style="text-align:center;">
         % if igra.stevilo_poskusov != 0:
           % if igra.pravilnost == True:
-          <p>Tvoj ugib je bil pravilen.</p>
+          <p>Izbrana oseba <u>ima</u> to lastnost.</p>
           % else:
-          <p>Tvoj ugib je bil napačen.</p>
+          <p>Izbrana oseba <u>nima</u> te lastnosti.</p>
           % end
         % else:
         <p></p>

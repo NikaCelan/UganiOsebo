@@ -36,11 +36,10 @@
       <p>
         Ko pritisnete gumb nova igra, vam bo računalnik naključno izbral eno izmed zgornjih oseb.<br>
         Cilj igre je, v čim manj poskusih ugotoviti katero osebo je računalnik izbral.<br>
-        Ugotavljate tako, da računalnik povprašate o lastnosti osebe. <br>
-        To storite tako, da iz spustnega seznama izberete lastnost za katero menite, da jo ima izbrana oseba.<br>
-        Če oseba ima to lastnost, vam bo računalnik odgovoril, da je vaš ugib pravilen in prečrtal osebe, brez te lastnosti<br>
-        V nasprotnem primeru, pa vam bo povodal, da je vaš ugib napačen in prečrtal vse osebe z ugibano lastnostjo<br>
-        Ko ostane le še ena neprečrtana oseba se ugra zaključi.<br>
+        Ugibate tako, da izbirate lastnosti iz spustnega seznama. <br>
+        Če lastnost uganete bo računalnik prečrtal osebe, brez te lastnosti.<br>
+        Če izberete napačno lastnost, pa bo prečtral osebe s to lastnostjo.<br>
+        Ko ostane le še ena neprečrtana oseba se igra zaključi.<br>
         Pri igranju vam želim veliko zabave in uspeha. 
       </p>
       </td>
