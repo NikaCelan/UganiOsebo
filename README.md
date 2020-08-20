@@ -16,7 +16,7 @@ Odprla se vam bo spletna stran z igro, kjer so napisana navodila za igranje
 
 ## Izgled
 
-Stran sem oblikovala sama, slike oseb in slika za ozadje pa niso moja last.
+Stran sem oblikovala sama, slike oseb in slika za ozadje pa niso moja last.<br>
 ozadje: https://sv.vecteezy.com/vektor-konst/690856-rosa-blom-ram-pa-en-vit-bakgrund (28. 7. 2020)
 osebe: https://lh3.googleusercontent.com/07KAHqdPqMps67C2KdyP1qA1TpsYgMOyf65C_QvPTyTUMuug6p1U734UKVdUSFd9SOJCxQ=s113 (28. 7. 2020)
 
