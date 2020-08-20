@@ -31,7 +31,7 @@
     % end
     </tr>
     <tr>
-    % if len(model.polje_oseb) == 1:
+    % if stanje == model.ZMAGA:
     <td colspan="7"; style="text-align:center;">
     <p>Čestitam. Uspelo ti je. Tvoja oseba je {{ igra.oseba['ime'] }}. Ugotovil si v {{ igra.stevilo_poskusov }} poskusih.</p>
 
@@ -66,6 +66,19 @@
         <td colspan="3"; style="text-align:center;">
           <p>Število poskusov: {{igra.stevilo_poskusov}} </p>
         <td>
+        <tr>
+        <td colspan="7"; style="text-align:center;">
+        % if igra.stevilo_poskusov != 0:
+          % if igra.pravilnost == True:
+          <p>Tvoj ugib je bil pravilen.</p>
+          % else:
+          <p>Tvoj ugib je bil napačen.</p>
+          % end
+        % else:
+        <p></p>
+        % end
+        </td>
+        </tr>
       % end
       </td>
 

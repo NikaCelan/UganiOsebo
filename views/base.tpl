@@ -35,6 +35,7 @@
         font-size: 16px; 
         font-family: Arial, Helvetica, sans-serif; 
         color:#ea8b8b;
+        font-weight:550;
     }
     label {
         color: #e04d4d;
