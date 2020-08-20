@@ -32,15 +32,18 @@ for i in range(len(osebe)):
     polje_oseb.append(i)
 
 #izdelava menija za prikaz spustnega seznama
+izdelava_menija1 = izdelava_menija.copy()
+polje_oseb1 = polje_oseb.copy()
 
 class Igra:
 
-    def __init__ (self, oseba, kriterij = None, vrednost = None, stevilo_poskusov = 0, napaka = None):
+    def __init__ (self, oseba, kriterij = None, vrednost = None, stevilo_poskusov = 0, napaka = None, ugibi = None):
         self.oseba = oseba
         self.kriterij = kriterij
         self.vrednost = vrednost
         self.stevilo_poskusov = stevilo_poskusov
         self.napaka = napaka
+        self.ugibi = []
 
     def zmaga(self):
         if len(polje_oseb) == 1:
@@ -71,7 +74,10 @@ class Igra:
     
     def ugibaj(self, kriterij, vrednost):
         global polje_oseb
+        polje_oseb = polje_oseb.copy()
         pomozni = polje_oseb.copy()
+        izdelava_menija.remove(kriterij + ':' + vrednost)
+        self.ugibi.append(kriterij + ':' + vrednost)
         if kriterij in self.oseba:
             self.povecaj_stevilo_poskusov()
             if vrednost == self.oseba[kriterij]:
@@ -95,8 +101,13 @@ class Igra:
         else:
             self.napaka_pri_vnosu(True)
 
-nakljucna_oseba = random.choice(osebe)   
+   
 def nova_igra():
+    global polje_oseb
+    global izdelava_menija
+    izdelava_menija = izdelava_menija1.copy()
+    polje_oseb = polje_oseb1.copy()
+    nakljucna_oseba = random.choice(osebe)
     return Igra(nakljucna_oseba)
 class UganiOsebo:
     def __init__(self, datoteka_s_stanjem):
@@ -125,11 +136,10 @@ class UganiOsebo:
     def nalozi_igre_iz_datoteke(self):
         with open(self.datoteka_s_stanjem, 'r', encoding='utf-8') as f:
             igre = json.load(f) 
-            self.igre = {int(id_igre): (Igra(oseba, kriterij, vrednost), stanje) 
-            for id_igre, (oseba, kriterij, vrednost, stanje) in igre.items()}
+            self.igre = {int(id_igre): (Igra(oseba, ugibi), stanje) for id_igre, (oseba, ugibi, stanje) in igre.items()}
 
     def zapisi_igre_v_datoteko(self):
         with open(self.datoteka_s_stanjem, 'w', encoding='utf-8') as f: 
-            igre = {id_igre: (igra.oseba, igra.kriterij, igra.vrednost, stanje) for id_igre, (igra, stanje) in self.igre.items()}
+            igre = {id_igre: (igra.oseba, igra.ugibi, stanje) for id_igre, (igra, stanje) in self.igre.items()}
             json.dump(igre, f, ensure_ascii=False)
 
